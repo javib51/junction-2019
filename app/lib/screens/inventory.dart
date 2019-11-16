@@ -236,6 +236,7 @@ class _InventoryPageState extends State<InventoryPage> {
     return SafeArea(
       child: new Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Color(0xff141a46),
           iconTheme: IconThemeData(
             color: Colors.white, //change your color here
