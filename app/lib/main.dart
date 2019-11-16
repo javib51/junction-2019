@@ -1,6 +1,6 @@
-import 'package:app/app_routes.dart';
-import 'package:app/keys.dart';
-import 'package:app/screens/inventory.dart';
+import 'package:budge/app_routes.dart';
+import 'package:budge/keys.dart';
+import 'package:budge/screens/inventory.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());

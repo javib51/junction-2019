@@ -1,4 +1,4 @@
-import 'package:app/screens/inventory.dart';
+import 'package:budge/screens/inventory.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
