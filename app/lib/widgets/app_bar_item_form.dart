@@ -34,8 +34,8 @@ class AppBarItemForm extends StatelessWidget implements PreferredSizeWidget {
               title,
               style: const TextStyle(
                   color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: "Roboto",
+                  fontWeight: FontWeight.w500,
+                  fontFamily: "Avenir",
                   fontStyle: FontStyle.normal,
                   fontSize: 20.0),
             ),
