@@ -22,13 +22,14 @@ class _InventoryPageState extends State<InventoryPage> {
           right: getSizeWidth(context, 4.7),
           top: getSizeHeight(context, 1.2)),
       child: new DecoratedBox(
-        decoration: new BoxDecoration(color: Colors.white,
-//          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+        decoration: new BoxDecoration(
+            color: Colors.white,
+            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
             boxShadow: [
               new BoxShadow(
                   color: Colors.black54,
-                  offset: new Offset(1.0, 2.0),
-                  blurRadius: 3.0)
+//                  offset: new Offset(1.0, 2.0),
+                  blurRadius: 1.0)
             ]),
         child: Row(
           children: <Widget>[
@@ -64,7 +65,7 @@ class _InventoryPageState extends State<InventoryPage> {
 
   Widget _buildItem(BuildContext context, String title) {
     return Container(
-      height: getSizeHeight(context, 11.9),
+//      height: getSizeHeight(context, 11.9),
       child: new DecoratedBox(
         decoration: new BoxDecoration(color: Color(0xffe8e8e8),
 //          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
@@ -75,7 +76,9 @@ class _InventoryPageState extends State<InventoryPage> {
                   blurRadius: 2.0)
             ]),
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: getSizeWidth(context, 6.1)),
+          padding: EdgeInsets.symmetric(
+              vertical: getSizeHeight(context, 2),
+              horizontal: getSizeWidth(context, 6.1)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -86,7 +89,11 @@ class _InventoryPageState extends State<InventoryPage> {
                 borderWidth: 1,
                 initialsText: Text(
                   'ITEM',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontFamily: "Avenir",
+                  ),
                 ),
                 borderColor: Colors.transparent,
                 elevation: 2.0,
@@ -103,12 +110,17 @@ class _InventoryPageState extends State<InventoryPage> {
                     "Winter Coat",
                     style: TextStyle(
                       fontSize: 16,
+                      fontFamily: "Avenir",
+                      fontWeight: FontWeight.w400,
                     ),
+                  ),
+                  SizedBox(
+                    height: getSizeHeight(context, 1.3),
                   ),
                   Padding(
                     padding: EdgeInsets.only(right: 5.0),
                     child: new LinearPercentIndicator(
-                      width: getSizeWidth(context, 55.3),
+                      width: getSizeWidth(context, 59.3),
                       animation: true,
                       lineHeight: 20.0,
                       animationDuration: 2200,
@@ -117,20 +129,81 @@ class _InventoryPageState extends State<InventoryPage> {
                       progressColor: Color(0xe82f3f9e),
                     ),
                   ),
-                  Row(children: <Widget>[
-                    new RawMaterialButton(
-                      onPressed: () {},
-                      child: new Icon(
-                        Icons.clear,
-                        color: Colors.white,
-                        size: 25.0,
-                      ),
-                      shape: new CircleBorder(),
-                      elevation: 2.0,
-                      fillColor: Color(0xff676971),
+                  SizedBox(
+                    height: getSizeHeight(context, 1.3),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        height: getSizeHeight(context, 4.5),
+                        width: getSizeHeight(context, 4.5),
+                        child: new FloatingActionButton(
+                          onPressed: () {},
+                          child: new Icon(
+                            Icons.clear,
+                            color: Colors.white,
+                            size: 25.0,
+                          ),
+                          shape: new CircleBorder(),
+                          elevation: 2.0,
+                          backgroundColor: Color(0xff676971),
 //                      padding: const EdgeInsets.all(15.0),
-                    ),
-                  ],),
+                        ),
+                      ),
+                      SizedBox(
+                        width: getSizeWidth(context, 2),
+                      ),
+                      Container(
+                        height: getSizeHeight(context, 4.5),
+                        width: getSizeHeight(context, 4.5),
+                        child: new FloatingActionButton(
+                          onPressed: () {},
+                          child: new Icon(
+                            Icons.cached,
+                            color: Colors.white,
+                            size: 25.0,
+                          ),
+                          shape: new CircleBorder(),
+                          elevation: 2.0,
+                          backgroundColor: Color(0xff676971),
+//                      padding: const EdgeInsets.all(15.0),
+                        ),
+                      ),
+                      SizedBox(
+                        width: getSizeWidth(context, 10.5),
+                      ),
+                      Container(
+                        color: Color(0xfff2e5a1),
+                        padding: EdgeInsets.all(5),
+                        child: Text(
+                          "Durable",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: "Avenir",
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: getSizeWidth(context, 1),
+                      ),
+                      Container(
+                        color: Color(0xfff2bfa1),
+                        padding: EdgeInsets.all(5),
+                        child: Text(
+                          "Clothes",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: "Avenir",
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ],
@@ -142,7 +215,7 @@ class _InventoryPageState extends State<InventoryPage> {
 
   List<Widget> _buildItems(BuildContext context) {
     return [
-      _buildItem(context, "Title"),
+      _buildItem(context, "Winter Coat"),
     ];
   }
 
