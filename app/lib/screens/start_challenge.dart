@@ -171,15 +171,6 @@ class _StartChallengesPageState extends State<StartChallengesPage> {
                   ),
                 ),
                 new TextSpan(
-                  text: 'With each Starbucks Purchase that you do not take, ',
-                  style: TextStyle(
-                    color: Color(0xff2f3f9e),
-                    fontSize: 18,
-                    fontFamily: "Avenir",
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-                new TextSpan(
                   text: '€3.50 ',
                   style: TextStyle(
                     color: Color(0xff2f3f9e),
@@ -189,7 +180,7 @@ class _StartChallengesPageState extends State<StartChallengesPage> {
                   ),
                 ),
                 new TextSpan(
-                  text: 'will be transferred to your wishlits savings!',
+                  text: 'will be transferred to your wishlist savings!',
                   style: TextStyle(
                     color: Color(0xff2f3f9e),
                     fontSize: 18,
