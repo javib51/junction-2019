@@ -2,6 +2,7 @@ import 'package:budge/app_routes.dart';
 import 'package:budge/keys.dart';
 import 'package:budge/screens/inventory.dart';
 import 'package:budge/screens/saving_challenges.dart';
+import 'package:budge/screens/start_challenge.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -37,7 +38,7 @@ class _AppState extends State<App> {
         backgroundColor: Colors.white,
       ),
       //home: new MyHomePage(key: new Key("aaaaa"),title: "My app -" + Config.helloMessage,),
-      home: new SavingChallengesPage(),
+      home: new StartChallengesPage(),
       navigatorKey: Keys.navKey,
       routes: AppRoutes.getRoutes(),
     );
