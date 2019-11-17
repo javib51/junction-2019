@@ -5,7 +5,71 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../utils.dart';
 
+String _getTitle(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Canon 80d";
+    case "utilidades_domesticas":
+      return "Roomba 605";
+    case "brinquedos":
+      return "Catan";
+    case "consoles_games":
+      return "Battlefield V";
+    case "relogios_presentes":
+      return "Rolex Submariner";
+  }
+}
+
+String _getCat1(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Electronics";
+    case "utilidades_domesticas":
+      return "Domestic";
+    case "brinquedos":
+      return "Games";
+    case "consoles_games":
+      return "Games";
+    case "relogios_presentes":
+      return "Watch";
+  }
+}
+
+String _getCat2(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Durable";
+    case "utilidades_domesticas":
+      return "Durable";
+    case "brinquedos":
+      return "Durable";
+    case "consoles_games":
+      return "Durable";
+    case "relogios_presentes":
+      return "Durable";
+  }
+}
+
+String getImage(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "https://static.bhphoto.com/images/images2500x2500/1455749513_1225875.jpg";
+    case "utilidades_domesticas":
+      return "https://images-na.ssl-images-amazon.com/images/I/61K7QbCPtyL._SX355_.jpg";
+    case "brinquedos":
+      return "https://images-na.ssl-images-amazon.com/images/I/81G3u55HEHL._SX466_.jpg";
+    case "consoles_games":
+      return "https://images-na.ssl-images-amazon.com/images/I/81GOvlbRtmL._SL1500_.jpg";
+    case "relogios_presentes":
+      return "https://cdn2.chrono24.com/images/uhren/images_97/s6/12467697_xxl_v1569241825636.jpg";
+  }
+//    return;
+}
+
 class InventoryItemPage2 extends StatefulWidget {
+  final String title;
+  InventoryItemPage2(this.title);
+
   @override
   State<InventoryItemPage2> createState() => _InventoryItemPage2State();
 }
@@ -16,12 +80,78 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
     super.initState();
   }
 
+  Widget _buildTags(BuildContext context) {
+    return Container(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              SizedBox(
+                width: getSizeWidth(context, 4.1),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xfff2e5a1)),
+                  color: Color(0xfff2e5a1),
+                ),
+                width: getSizeWidth(context, 22),
+                padding: EdgeInsets.all(5),
+                child: Text(
+                  "Durable",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xfff2e5a1)),
+                  color: Color(0xfff2e5a1),
+                ),
+                width: getSizeWidth(context, 22),
+                padding: EdgeInsets.all(5),
+                child: Text(
+                  _getCat1(widget.title),
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Color(0xfff2e5a1)),
+                  color: Color(0xfff2e5a1),
+                ),
+                width: getSizeWidth(context, 22),
+                padding: EdgeInsets.all(5),
+                child: Text(
+                  "Old",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: getSizeWidth(context, 4.1),
+              ),
+            ]));
+  }
+
   Widget _buildItem(BuildContext context) {
     return Container(
         child: Column(
       children: <Widget>[
         CircularProfileAvatar(
-          'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
+          getImage(widget.title),
+          //'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
           radius: 60,
           backgroundColor: Colors.transparent,
           borderWidth: 1,
@@ -41,7 +171,7 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
           height: getSizeHeight(context, 1.6),
         ),
         Text(
-          "ITEM NAME",
+          _getTitle(widget.title),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 19,
@@ -376,67 +506,67 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
   }
 
 }
-Widget _buildTags(BuildContext context) {
-  return Container(
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            SizedBox(
-              width: getSizeWidth(context, 4.1),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xfff2e5a1)),
-                color: Color(0xfff2e5a1),
-              ),
-              width: getSizeWidth(context, 22),
-              padding: EdgeInsets.all(5),
-              child: Text(
-                "Durable",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xfff2e5a1)),
-                color: Color(0xfff2e5a1),
-              ),
-              width: getSizeWidth(context, 22),
-              padding: EdgeInsets.all(5),
-              child: Text(
-                "ItemCategory",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Color(0xfff2e5a1)),
-                color: Color(0xfff2e5a1),
-              ),
-              width: getSizeWidth(context, 22),
-              padding: EdgeInsets.all(5),
-              child: Text(
-                "Old",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            SizedBox(
-              width: getSizeWidth(context, 4.1),
-            ),
-          ]));
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

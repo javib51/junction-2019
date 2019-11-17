@@ -5,8 +5,74 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../app_routes.dart';
 import '../utils.dart';
+import 'inventory_item2.dart';
+import 'inventory_item3.dart';
+
+String _getTitle(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Canon 80d";
+    case "utilidades_domesticas":
+      return "Roomba 605";
+    case "brinquedos":
+      return "Catan";
+    case "consoles_games":
+      return "Battlefield V";
+    case "relogios_presentes":
+      return "Rolex Submariner";
+  }
+}
+
+String _getCat1(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Electronics";
+    case "utilidades_domesticas":
+      return "Domestic";
+    case "brinquedos":
+      return "Games";
+    case "consoles_games":
+      return "Games";
+    case "relogios_presentes":
+      return "Watch";
+  }
+}
+
+String _getCat2(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "Durable";
+    case "utilidades_domesticas":
+      return "Durable";
+    case "brinquedos":
+      return "Durable";
+    case "consoles_games":
+      return "Durable";
+    case "relogios_presentes":
+      return "Durable";
+  }
+}
+
+String getImage(String e) {
+  switch(e) {
+    case "eletronicos":
+      return "https://static.bhphoto.com/images/images2500x2500/1455749513_1225875.jpg";
+    case "utilidades_domesticas":
+      return "https://images-na.ssl-images-amazon.com/images/I/61K7QbCPtyL._SX355_.jpg";
+    case "brinquedos":
+      return "https://images-na.ssl-images-amazon.com/images/I/81G3u55HEHL._SX466_.jpg";
+    case "consoles_games":
+      return "https://images-na.ssl-images-amazon.com/images/I/81GOvlbRtmL._SL1500_.jpg";
+    case "relogios_presentes":
+      return "https://cdn2.chrono24.com/images/uhren/images_97/s6/12467697_xxl_v1569241825636.jpg";
+  }
+//    return;
+}
 
 class InventoryItemPage extends StatefulWidget {
+  final String title;
+  InventoryItemPage(this.title);
+
   @override
   State<InventoryItemPage> createState() => _InventoryItemPageState();
 }
@@ -50,7 +116,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
             width: getSizeWidth(context, 22),
             padding: EdgeInsets.all(5),
             child: Text(
-              "ItemCategory",
+              _getCat1(widget.title),
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 12,
@@ -87,7 +153,8 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
         child: Column(
       children: <Widget>[
         CircularProfileAvatar(
-          'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
+          getImage(widget.title),
+          //'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
           radius: 60,
           backgroundColor: Colors.transparent,
           borderWidth: 1,
@@ -107,7 +174,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
           height: getSizeHeight(context, 1.6),
         ),
         Text(
-          "ITEM NAME",
+          _getTitle(widget.title),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 19,
@@ -298,7 +365,15 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
                 width: getSizeHeight(context, 10),
                 child: new FloatingActionButton(
                   heroTag: "btn1",
-                  onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item3);},
+                  onPressed: () {
+                    //Navigator.pushNamed(context, AppRoutes.inventory_item2);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InventoryItemPage3(widget.title),
+                      ),
+                    );
+                  },
                   child: new Icon(
                     Icons.clear,
                     color: Colors.white,
@@ -340,7 +415,15 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
                 width: getSizeHeight(context, 10),
                 child: new FloatingActionButton(
                   heroTag: "btn2",
-                  onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item2);},
+                  onPressed: () {
+                    //Navigator.pushNamed(context, AppRoutes.inventory_item2);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => InventoryItemPage2(widget.title),
+                      ),
+                    );
+                    },
                   child: new Icon(
                     Icons.cached,
                     color: Colors.white,
