@@ -1,3 +1,4 @@
+import 'package:budge/main.dart';
 import 'package:budge/screens/dashboard.dart';
 import 'package:budge/screens/inventory.dart';
 import 'package:budge/screens/saving_challenges.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:budge/screens/inventory_item.dart';
 import 'package:budge/screens/inventory_item2.dart';
 import 'package:budge/screens/inventory_item3.dart';
+import 'package:budge/screens/challenge_progress.dart';
 
 class AppRoutes {
   static const inventory = '/inventory';
@@ -21,6 +23,7 @@ class AppRoutes {
   static const strategy_settings = '/strategy';
   static const wish_list = '/wishlist';
   static const dashboard = '/dashboard';
+  static const progress = '/progress';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return <String, WidgetBuilder>{
@@ -31,6 +34,7 @@ class AppRoutes {
       AppRoutes.strategy_settings: (context) => StrategySettings(),
       AppRoutes.wish_list: (context) => WishListPage(),
       AppRoutes.dashboard: (context) => DashboardPage(),
+      AppRoutes.progress: (context) => ChallengeProgressPage(),
       //AppRoutes.inventory_item: (context) => InventoryItemPage(),
       //AppRoutes.inventory_item2: (context) => InventoryItemPage2(),
       //AppRoutes.inventory_item3: (context) => InventoryItemPage3(),

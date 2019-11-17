@@ -14,6 +14,8 @@ class DataStore {
   bool auto_stra = false;
   bool cut_stra = false;
 
+  bool add_challenge = false;
+
   List<String> inventory = List();
   static final DataStore instance = new DataStore._internal();
 

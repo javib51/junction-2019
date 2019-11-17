@@ -2,6 +2,7 @@ import 'package:budge/utils.dart';
 import 'package:flutter/material.dart';
 
 import '../app_routes.dart';
+import '../data.dart';
 
 class SavingChallengesPage extends StatefulWidget {
   @override
@@ -122,6 +123,7 @@ class _SavingChallengesPageState extends State<SavingChallengesPage> {
                 color: Color(0xff2f3f9e),
                 onPressed: () {
                   if (title == 'Daily Starbucks Purchase') {
+                    DataStore.instance.add_challenge = true;
                     Navigator.pushNamed(context, AppRoutes.start_challenge);
                   }}
               )

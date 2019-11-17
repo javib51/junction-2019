@@ -381,7 +381,9 @@ class _DashboardPageState extends State<DashboardPage> {
 
   Widget _buildSubChallenge(
       BuildContext context, String text, double percentage) {
-    return Container(
+    return GestureDetector(
+      onTap: (){if(DataStore.instance.add_challenge){Navigator.pushNamed(context, AppRoutes.progress);}},
+      child: Container(
 //      height: getSizeHeight(context, 16.9),
       width: getSizeWidth(context, 37.1),
       child: new DecoratedBox(
@@ -404,7 +406,7 @@ class _DashboardPageState extends State<DashboardPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                text,
+                DataStore.instance.add_challenge == true ? text : "No challenge",
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: "Avenir",
@@ -422,7 +424,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   animation: true,
                   lineHeight: 13.0,
                   animationDuration: 2200,
-                  percent: percentage,
+                  percent: DataStore.instance.add_challenge == true ? percentage : 0,
 //                    linearStrokeCap: LinearStrokeCap.roundAll,
                   progressColor: Color(0xe82f3f9e),
                 ),
@@ -431,7 +433,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ),
       ),
-    );
+    ));
   }
 
   Widget _buildChallenge(BuildContext context) {
@@ -481,10 +483,10 @@ class _DashboardPageState extends State<DashboardPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       _buildSubChallenge(
-                          context, _getChallenges()[0], 0.35),
+                          context,"Daily Starbucks Purchase", 0.85),
   //                    SizedBox(width: getSizeWidth(context,2),),
-                      _buildSubChallenge(
-                          context, _getChallenges()[1], 0.2),
+//                      _buildSubChallenge(
+//                          context, _getChallenges()[1], 0.2),
                     ],
                   ),
                 ),
