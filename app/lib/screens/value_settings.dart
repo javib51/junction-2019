@@ -3,6 +3,7 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:budge/data.dart';
+import 'package:budge/app_routes.dart';
 
 class ValueSettings extends StatefulWidget {
   @override
@@ -16,22 +17,22 @@ class _ValueSettings extends State<ValueSettings> {
     print("Value Page");
   }
 
-  int _radioValue1 = -1;
-  int _radioValue2 = -1;
-  int _radioValue3 = -1;
+  int _radioValue1 = DataStore.instance.sus_value;
+  int _radioValue2 = DataStore.instance.he_value;
+  int _radioValue3 = DataStore.instance.sav_value;
 
   void _handleRadioValueChange1(int value) {
     setState(() {
       _radioValue1 = value;
 
       switch (_radioValue1) {
-        case 0:
+        case 1:
           DataStore.instance.sus_value = 1;
           break;
-        case 1:
+        case 2:
           DataStore.instance.sus_value = 2;
           break;
-        case 2:
+        case 3:
           DataStore.instance.sus_value = 3;
           break;
       }
@@ -42,13 +43,13 @@ class _ValueSettings extends State<ValueSettings> {
       _radioValue2 = value;
 
       switch (_radioValue2) {
-        case 0:
+        case 1:
           DataStore.instance.he_value = 1;
           break;
-        case 1:
+        case 2:
           DataStore.instance.he_value = 2;
           break;
-        case 2:
+        case 3:
           DataStore.instance.he_value = 3;
           break;
       }
@@ -59,13 +60,13 @@ class _ValueSettings extends State<ValueSettings> {
       _radioValue3 = value;
 
       switch (_radioValue3) {
-        case 0:
+        case 1:
           DataStore.instance.sav_value = 1;
           break;
-        case 1:
+        case 2:
           DataStore.instance.sav_value = 2;
           break;
-        case 2:
+        case 3:
           DataStore.instance.sav_value = 3;
           break;
       }
@@ -142,7 +143,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 0,
+                              value: 1,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
                             ),
@@ -161,7 +162,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 1,
+                              value: 2,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
                             ),
@@ -180,7 +181,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 2,
+                              value: 3,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
                             ),
@@ -246,7 +247,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 0,
+                              value: 1,
                               groupValue: _radioValue2,
                               onChanged: _handleRadioValueChange2,
                             ),
@@ -265,7 +266,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 1,
+                              value: 2,
                               groupValue: _radioValue2,
                               onChanged: _handleRadioValueChange2,
                             ),
@@ -284,7 +285,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 2,
+                              value: 3,
                               groupValue: _radioValue2,
                               onChanged: _handleRadioValueChange2,
                             ),
@@ -350,7 +351,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 0,
+                              value: 1,
                               groupValue: _radioValue3,
                               onChanged: _handleRadioValueChange3,
                             ),
@@ -369,7 +370,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 1,
+                              value: 2,
                               groupValue: _radioValue3,
                               onChanged: _handleRadioValueChange3,
                             ),
@@ -388,7 +389,7 @@ class _ValueSettings extends State<ValueSettings> {
                         Column(
                           children: <Widget>[
                             new Radio(
-                              value: 2,
+                              value: 3,
                               groupValue: _radioValue3,
                               onChanged: _handleRadioValueChange3,
                             ),
@@ -425,7 +426,7 @@ class _ValueSettings extends State<ValueSettings> {
               ),
             ),
             color: Color(0xff2f3f9e),
-            onPressed: () {},
+            onPressed: () {Navigator.pushNamed(context, AppRoutes.strategy_settings);},
           ),
         ),
       ]),

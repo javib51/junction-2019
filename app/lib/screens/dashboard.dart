@@ -15,6 +15,35 @@ class _DashboardPageState extends State<DashboardPage> {
     super.initState();
   }
 
+  List<String> _getChallenges(){
+    List<String> challenges = new List();
+    print(DataStore.instance.swi_stra);
+    if(!DataStore.instance.swi_stra && !DataStore.instance.resell_stra &&
+        !DataStore.instance.invest_stra && !DataStore.instance.auto_stra && !DataStore.instance.cut_stra){
+      challenges.add("No user input");
+      challenges.add("No user input");
+    }
+    if(DataStore.instance.swi_stra){
+      challenges.add("No enough data for brand switching");
+    }
+    if(DataStore.instance.resell_stra){
+      challenges.add("Resell from your inventory");
+    }
+    if(DataStore.instance.invest_stra){
+      challenges.add("Make an investment");
+    }
+    if(DataStore.instance.auto_stra){
+      challenges.add("Autosave challenge underdevelopment");
+    }
+    if(DataStore.instance.cut_stra && DataStore.instance.he_value ==3){
+      challenges.add("Take the bike to work");
+    }
+    if(DataStore.instance.cut_stra){
+      challenges.add("Daily Starbucks Purchase");
+    }
+    return challenges;
+  }
+
   Widget _buildInventory(BuildContext context) {
     return GestureDetector(
       onTap: (){Navigator.pushNamed(context, AppRoutes.inventory);},
@@ -67,7 +96,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           decoration: new BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                new BorderRadius.all(new Radius.circular(10.0)),
+                            new BorderRadius.all(new Radius.circular(10.0)),
                           ),
                           child: Image.asset("./assets/images/bicycle.png",
                               fit: BoxFit.contain),
@@ -80,7 +109,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           decoration: new BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                new BorderRadius.all(new Radius.circular(10.0)),
+                            new BorderRadius.all(new Radius.circular(10.0)),
                           ),
                           child: Image.asset("./assets/images/high-heels.png",
                               fit: BoxFit.contain),
@@ -93,7 +122,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           decoration: new BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                new BorderRadius.all(new Radius.circular(10.0)),
+                            new BorderRadius.all(new Radius.circular(10.0)),
                           ),
                           child: Image.asset("./assets/images/photo-camera.png",
                               fit: BoxFit.contain),
@@ -106,7 +135,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           decoration: new BoxDecoration(
                             color: Colors.white,
                             borderRadius:
-                                new BorderRadius.all(new Radius.circular(10.0)),
+                            new BorderRadius.all(new Radius.circular(10.0)),
                           ),
                           child: Image.asset("./assets/images/surfboard.png",
                               fit: BoxFit.contain),
@@ -171,19 +200,19 @@ class _DashboardPageState extends State<DashboardPage> {
                       children: <Widget>[
                         new Stack(children: <Widget>[
                           Container(
-                          height: getSizeWidth(context, 17),
-                          width: getSizeWidth(context, 17),
-                          child: new DecoratedBox(
-                            decoration: new BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(10.0)),
+                            height: getSizeWidth(context, 17),
+                            width: getSizeWidth(context, 17),
+                            child: new DecoratedBox(
+                              decoration: new BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: new BorderRadius.all(
+                                    new Radius.circular(10.0)),
+                              ),
+                              child: Image.asset(
+                                  "./assets/images/green-earth.png",
+                                  fit: BoxFit.contain),
                             ),
-                            child: Image.asset(
-                                "./assets/images/green-earth.png",
-                                fit: BoxFit.contain),
                           ),
-                        ),
                           Container(
                             alignment: Alignment(0, 0),
                             height: 20,
@@ -317,7 +346,7 @@ class _DashboardPageState extends State<DashboardPage> {
                             ),
                             child:
                             Text(
-                                DataStore.instance.sav_value == -1 ? "-" : DataStore.instance.sav_value.toString(),
+                              DataStore.instance.sav_value == -1 ? "-" : DataStore.instance.sav_value.toString(),
                               style: TextStyle(
                                 fontSize: 14,
                                 fontFamily: "Avenir",
@@ -450,10 +479,10 @@ class _DashboardPageState extends State<DashboardPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     _buildSubChallenge(
-                        context, "Save on Starbucks purchases", 0.35),
+                        context, _getChallenges()[0], 0.35),
 //                    SizedBox(width: getSizeWidth(context,2),),
                     _buildSubChallenge(
-                        context, "Resell from your inventory", 0.2),
+                        context, _getChallenges()[1], 0.2),
                   ],
                 ),
               ),
@@ -536,7 +565,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         decoration: new BoxDecoration(
                           color: Colors.white,
                           borderRadius:
-                              new BorderRadius.all(new Radius.circular(10.0)),
+                          new BorderRadius.all(new Radius.circular(10.0)),
                         ),
                         child: Image.asset("./assets/images/smartwatch.png",
                             fit: BoxFit.contain),
@@ -600,7 +629,8 @@ class _DashboardPageState extends State<DashboardPage> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.settings),
-              onPressed: () {Navigator.pushNamed(context, AppRoutes.value_settings);},
+              onPressed: () {
+                Navigator.pushNamed(context, AppRoutes.value_settings);},
             ),
           ],
         ),

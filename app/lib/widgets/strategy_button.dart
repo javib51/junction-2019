@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:budge/utils/functions.dart';
+import 'package:budge/data.dart';
 //import 'package:budge/globals.dart' as globals;
 //
 //globals.
@@ -11,7 +12,7 @@ class PaymentMethodButton extends StatefulWidget {
   final String title;
   final bool initState;
   final bool isDisabled;
-  int id;
+  final int id;
 
 
   PaymentMethodButton(
@@ -46,30 +47,29 @@ class _PaymentMethodButtonState extends State<PaymentMethodButton> {
   }
 
   void _handleChange(value) {
-    if (widget.isDisabled) {
-      return null;
-    } else {
+//    if (widget.isDisabled) {
+//      return null;
+//    } else {
       setState(() {
         isChecked = value;
-//        switch (widget.id) {
-//          case 0:
-//            _ = value;
-//            break;
-//          case 1:
-//            print(1);
-//            break;
-//          case 2:
-//            print(2);
-//            break;
-//          case 3:
-//            print(2);
-//            break;
-//          case 4:
-//            print(2);
-//            break;
-//        }
-      });
-    }
+        switch (widget.id) {
+          case 0:
+            DataStore.instance.swi_stra = value;
+            break;
+          case 1:
+            DataStore.instance.resell_stra = value;
+            break;
+          case 2:
+            DataStore.instance.invest_stra = value;
+            break;
+          case 3:
+            DataStore.instance.auto_stra = value;
+            break;
+          case 4:
+            DataStore.instance.cut_stra = value;
+            break;
+        }
+      });//}
   }
 
   void _handlePress() {

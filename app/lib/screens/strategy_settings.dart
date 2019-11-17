@@ -3,6 +3,8 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:budge/widgets/strategy_button.dart';
+import 'package:budge/app_routes.dart';
+import 'package:budge/data.dart';
 
 class StrategySettings extends StatefulWidget {
   @override
@@ -14,13 +16,16 @@ class _StrategySettings extends State<StrategySettings> {
   void initState() {
     super.initState();
     print("Strategy Page");
+//    DataStore.instance.he_value = -1;
+//    DataStore.instance.sav_value = -1;
+//    DataStore.instance.sus_value = -1;
+//    DataStore.instance.swi_stra = false;
+//    DataStore.instance.resell_stra = false;
+//    DataStore.instance.invest_stra = false;
+//    DataStore.instance.auto_stra = false;
+//    DataStore.instance.cut_stra = false;
   }
 
-  int _radioValue1 = -1;
-  int _radioValue2 = -1;
-  int _radioValue3 = -1;
-  int _radioValue4 = -1;
-  int _radioValue5 = -1;
 
   void _handleRadioValueChange(int id, bool value) {
     print(id);
@@ -420,6 +425,7 @@ class _StrategySettings extends State<StrategySettings> {
           //iconPath: "assets/images/payment_cash.png",
           isDisabled: false,
           initState: false,
+          id: 0,
         ),
         Padding(padding: EdgeInsets.only(top: getSizeWidth(context, 2))),
 //        PaymentMethodButton(
@@ -446,6 +452,7 @@ class _StrategySettings extends State<StrategySettings> {
           //iconPath: "assets/images/payment_cash.png",
           isDisabled: false,
           initState: false,
+          id: 1,
         ),
         Padding(padding: EdgeInsets.only(top: getSizeWidth(context, 2))),
 //        PaymentMethodButton(
@@ -472,6 +479,7 @@ class _StrategySettings extends State<StrategySettings> {
           //iconPath: "assets/images/payment_cash.png",
           isDisabled: false,
           initState: false,
+          id: 2,
         ),
         Padding(padding: EdgeInsets.only(top: getSizeWidth(context, 2))),
 //        PaymentMethodButton(
@@ -497,6 +505,7 @@ class _StrategySettings extends State<StrategySettings> {
           //iconPath: "assets/images/payment_cash.png",
           isDisabled: false,
           initState: false,
+          id: 3,
         ),
         Padding(padding: EdgeInsets.only(top: getSizeWidth(context, 2))),
 //        PaymentMethodButton(
@@ -522,6 +531,7 @@ class _StrategySettings extends State<StrategySettings> {
           //iconPath: "assets/images/payment_cash.png",
           isDisabled: false,
           initState: false,
+          id: 4,
         ),
         Padding(padding: EdgeInsets.only(top: getSizeWidth(context, 2))),
 
@@ -542,7 +552,7 @@ class _StrategySettings extends State<StrategySettings> {
               ),
             ),
             color: Color(0xff2f3f9e),
-            onPressed: () {},
+            onPressed: () {Navigator.pushNamed(context, AppRoutes.dashboard);},
           ),
         ),
 //        PaymentMethodButton(
