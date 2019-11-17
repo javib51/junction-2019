@@ -7,6 +7,8 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import '../app_routes.dart';
 import 'package:random_string/random_string.dart';
 
+import 'inventory_item.dart';
+
 class InventoryPage extends StatefulWidget {
   @override
   State<InventoryPage> createState() => _InventoryPageState();
@@ -146,17 +148,17 @@ class _InventoryPageState extends State<InventoryPage> {
   Widget _buildItem(BuildContext context, String title) {
     return GestureDetector(
       // WE NEED TO SEND ARGUMENTS TO THE NEXT SCREEN (NAME OF ITEM)
-//      onTap: () {
-//        Navigator.push(
-//          context,
-//          MaterialPageRoute(
-//            builder: (context) => InventoryItemPageState(item: Item),
-//          ),
-//        );
-//      },
       onTap: () {
-        Navigator.pushNamed(context, AppRoutes.inventory_item);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => InventoryItemPage(title),
+          ),
+        );
       },
+//      onTap: () {
+//        Navigator.pushNamed(context, AppRoutes.inventory_item);
+//      },
       child: Container(
         //      height: getSizeHeight(context, 11.9),
         child: new DecoratedBox(
@@ -349,7 +351,7 @@ class _InventoryPageState extends State<InventoryPage> {
             color: Colors.white, //change your color here
           ),
           title: Text(
-            "YOUR INVENTORY",
+            "Your inventory",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
         ),

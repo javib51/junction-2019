@@ -31,9 +31,9 @@ class AppRoutes {
       AppRoutes.strategy_settings: (context) => StrategySettings(),
       AppRoutes.wish_list: (context) => WishListPage(),
       AppRoutes.dashboard: (context) => DashboardPage(),
-      AppRoutes.inventory_item: (context) => InventoryItemPage(),
-      AppRoutes.inventory_item2: (context) => InventoryItemPage2(),
-      AppRoutes.inventory_item3: (context) => InventoryItemPage3(),
+      //AppRoutes.inventory_item: (context) => InventoryItemPage(),
+      //AppRoutes.inventory_item2: (context) => InventoryItemPage2(),
+      //AppRoutes.inventory_item3: (context) => InventoryItemPage3(),
     };
   }
 }
