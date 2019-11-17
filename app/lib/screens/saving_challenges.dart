@@ -1,6 +1,8 @@
 import 'package:budge/utils.dart';
 import 'package:flutter/material.dart';
 
+import '../app_routes.dart';
+
 class SavingChallengesPage extends StatefulWidget {
   @override
   State<SavingChallengesPage> createState() => _SavingChallengesPageState();
@@ -118,7 +120,10 @@ class _SavingChallengesPageState extends State<SavingChallengesPage> {
                   ),
                 ),
                 color: Color(0xff2f3f9e),
-                onPressed: () {},
+                onPressed: () {
+                  if (title == 'Daily Starbucks Purchase') {
+                    Navigator.pushNamed(context, AppRoutes.start_challenge);
+                  }}
               )
             ],
           ),

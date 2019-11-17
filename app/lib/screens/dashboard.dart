@@ -435,148 +435,154 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget _buildChallenge(BuildContext context) {
-    return Container(
+    return GestureDetector(
+        onTap: (){Navigator.pushNamed(context, AppRoutes.saving_challenges);},
+    child: Container(
 //      height: getSizeHeight(context, 16.9),
-      width: getSizeWidth(context, 99.1),
-      child: new DecoratedBox(
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-          boxShadow: [
-            new BoxShadow(
-                color: Colors.black54,
-//                  offset: new Offset(1.0, 2.0),
-                blurRadius: 1.0)
-          ],
-        ),
-        child: Container(
-          padding: EdgeInsets.only(
-            top: getSizeHeight(context, 2.2),
-            bottom: getSizeHeight(context, 2.2),
-            left: getSizeWidth(context, 3.5),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Your Challenges",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: getSizeHeight(context, 2),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-//                  left: getSizeWidth(context, 4.7),
-                  right: getSizeWidth(context, 4.2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    _buildSubChallenge(
-                        context, _getChallenges()[0], 0.35),
-//                    SizedBox(width: getSizeWidth(context,2),),
-                    _buildSubChallenge(
-                        context, _getChallenges()[1], 0.2),
-                  ],
-                ),
-              ),
+        width: getSizeWidth(context, 99.1),
+        child: new DecoratedBox(
+          decoration: new BoxDecoration(
+            color: Colors.white,
+            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+            boxShadow: [
+              new BoxShadow(
+                  color: Colors.black54,
+  //                  offset: new Offset(1.0, 2.0),
+                  blurRadius: 1.0)
             ],
           ),
-        ),
+          child: Container(
+            padding: EdgeInsets.only(
+              top: getSizeHeight(context, 2.2),
+              bottom: getSizeHeight(context, 2.2),
+              left: getSizeWidth(context, 3.5),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Your Challenges",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: getSizeHeight(context, 2),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+  //                  left: getSizeWidth(context, 4.7),
+                    right: getSizeWidth(context, 4.2),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      _buildSubChallenge(
+                          context, _getChallenges()[0], 0.35),
+  //                    SizedBox(width: getSizeWidth(context,2),),
+                      _buildSubChallenge(
+                          context, _getChallenges()[1], 0.2),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ),
     );
   }
 
   Widget _buildWishList(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){Navigator.pushNamed(context, AppRoutes.wish_list);},
+      child: Container(
 //      height: getSizeHeight(context, 16.9),
-      width: getSizeWidth(context, 99.1),
-      child: new DecoratedBox(
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-          boxShadow: [
-            new BoxShadow(
-                color: Colors.black54,
-//                  offset: new Offset(1.0, 2.0),
-                blurRadius: 1.0)
-          ],
-        ),
-        child: Container(
-          padding: EdgeInsets.only(
-            top: getSizeHeight(context, 2.2),
-            bottom: getSizeHeight(context, 2.2),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-//                  left: getSizeWidth(context, 4.7),
-                  right: getSizeWidth(context, 4.2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Text(
-                      "Your Wishlist",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: "Avenir",
-                        fontWeight: FontWeight.w400,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(
-                      width: getSizeWidth(context, 20),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        Icons.add,
-                        size: 30,
-                        color: Color(0xff141a46),
-                      ),
-                      onPressed: () {},
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: getSizeHeight(context, 2),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-//                  left: getSizeWidth(context, 4.7),
-                  right: getSizeWidth(context, 4.2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Container(
-                      height: getSizeWidth(context, 22),
-                      width: getSizeWidth(context, 22),
-                      child: new DecoratedBox(
-                        decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                          new BorderRadius.all(new Radius.circular(10.0)),
-                        ),
-                        child: Image.asset("./assets/images/smartwatch.png",
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+        width: getSizeWidth(context, 99.1),
+        child: new DecoratedBox(
+          decoration: new BoxDecoration(
+            color: Colors.white,
+            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+            boxShadow: [
+              new BoxShadow(
+                  color: Colors.black54,
+  //                  offset: new Offset(1.0, 2.0),
+                  blurRadius: 1.0)
             ],
           ),
-        ),
+          child: Container(
+            padding: EdgeInsets.only(
+              top: getSizeHeight(context, 2.2),
+              bottom: getSizeHeight(context, 2.2),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(
+  //                  left: getSizeWidth(context, 4.7),
+                    right: getSizeWidth(context, 4.2),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        "Your Wishlist",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontFamily: "Avenir",
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(
+                        width: getSizeWidth(context, 20),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.add,
+                          size: 30,
+                          color: Color(0xff141a46),
+                        ),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: getSizeHeight(context, 2),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+  //                  left: getSizeWidth(context, 4.7),
+                    right: getSizeWidth(context, 4.2),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Container(
+                        height: getSizeWidth(context, 22),
+                        width: getSizeWidth(context, 22),
+                        child: new DecoratedBox(
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                            new BorderRadius.all(new Radius.circular(10.0)),
+                          ),
+                          child: Image.asset("./assets/images/smartwatch.png",
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
       ),
     );
   }

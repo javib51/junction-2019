@@ -1,6 +1,8 @@
 import 'package:budge/utils.dart';
 import 'package:flutter/material.dart';
 
+import '../app_routes.dart';
+
 class StartChallengesPage extends StatefulWidget {
   @override
   State<StartChallengesPage> createState() => _StartChallengesPageState();
@@ -252,7 +254,7 @@ class _StartChallengesPageState extends State<StartChallengesPage> {
               ),
             ),
             color: Color(0xff2f3f9e),
-            onPressed: () {},
+            onPressed: () {Navigator.pushNamed(context, AppRoutes.dashboard);},
           ),
         ),
         SizedBox(
