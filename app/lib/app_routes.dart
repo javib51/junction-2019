@@ -1,3 +1,4 @@
+import 'package:budge/screens/dashboard.dart';
 import 'package:budge/screens/inventory.dart';
 import 'package:budge/screens/saving_challenges.dart';
 import 'package:budge/screens/start_challenge.dart';
@@ -14,6 +15,7 @@ class AppRoutes {
   static const value_settings = '/values';
   static const strategy_settings = '/strategy';
   static const wish_list = '/wishlist';
+  static const dashboard = '/dashboard';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return <String, WidgetBuilder>{
@@ -23,6 +25,7 @@ class AppRoutes {
       AppRoutes.value_settings: (context) => ValueSettings(),
       AppRoutes.strategy_settings: (context) => StrategySettings(),
       AppRoutes.wish_list: (context) => WishListPage(),
+      AppRoutes.dashboard: (context) => DashboardPage(),
     };
   }
 }
