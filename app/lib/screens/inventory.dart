@@ -67,7 +67,16 @@ class _InventoryPageState extends State<InventoryPage> {
 
   Widget _buildItem(BuildContext context, String title) {
     return GestureDetector(
-        onTap: (){Navigator.pushNamed(context, AppRoutes.inventory_item);},
+      // WE NEED TO SEND ARGUMENTS TO THE NEXT SCREEN (NAME OF ITEM)
+//      onTap: () {
+//        Navigator.push(
+//          context,
+//          MaterialPageRoute(
+//            builder: (context) => InventoryItemPageState(item: Item),
+//          ),
+//        );
+//      },
+      onTap: (){Navigator.pushNamed(context, AppRoutes.inventory_item);},
       child: Container(
   //      height: getSizeHeight(context, 11.9),
         child: new DecoratedBox(
@@ -144,7 +153,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
                             heroTag: "btn1",
-                            onPressed: () {},
+                            onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item3);}, // todo: Send same arguments as above to next screen
                             child: new Icon(
                               Icons.clear,
                               color: Colors.white,
@@ -164,7 +173,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
                             heroTag: "btn2",
-                            onPressed: () {},
+                            onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item2);},  // todo: Send same arguments as above to next screen
                             child: new Icon(
                               Icons.cached,
                               color: Colors.white,
