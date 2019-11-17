@@ -8,6 +8,8 @@ import '../app_routes.dart';
 import 'package:random_string/random_string.dart';
 
 import 'inventory_item.dart';
+import 'inventory_item2.dart';
+import 'inventory_item3.dart';
 
 class InventoryPage extends StatefulWidget {
   @override
@@ -237,8 +239,14 @@ class _InventoryPageState extends State<InventoryPage> {
                           child: new FloatingActionButton(
                             heroTag: randomString(10),
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, AppRoutes.inventory_item3);
+//                              Navigator.pushNamed(
+//                                  context, AppRoutes.inventory_item3);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => InventoryItemPage3(title),
+                                ),
+                              );
                             },
                             // todo: Send same arguments as above to next screen
                             child: new Icon(
@@ -261,8 +269,14 @@ class _InventoryPageState extends State<InventoryPage> {
                           child: new FloatingActionButton(
                             heroTag: randomString(10),
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, AppRoutes.inventory_item2);
+//                              Navigator.pushNamed(
+//                                  context, AppRoutes.inventory_item2);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => InventoryItemPage2(title),
+                                ),
+                              );
                             },
                             // todo: Send same arguments as above to next screen
                             child: new Icon(

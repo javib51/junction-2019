@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../app_routes.dart';
+import '../data.dart';
 import '../utils.dart';
 import 'inventory_item2.dart';
 import 'inventory_item3.dart';
@@ -20,6 +21,8 @@ String _getTitle(String e) {
       return "Battlefield V";
     case "relogios_presentes":
       return "Rolex Submariner";
+    default:
+      return e;
   }
 }
 
@@ -35,6 +38,8 @@ String _getCat1(String e) {
       return "Games";
     case "relogios_presentes":
       return "Watch";
+    default:
+      return "Food";
   }
 }
 
@@ -50,6 +55,8 @@ String _getCat2(String e) {
       return "Durable";
     case "relogios_presentes":
       return "Durable";
+    default:
+      return "No Durable";
   }
 }
 
@@ -65,6 +72,8 @@ String getImage(String e) {
       return "https://images-na.ssl-images-amazon.com/images/I/81GOvlbRtmL._SL1500_.jpg";
     case "relogios_presentes":
       return "https://cdn2.chrono24.com/images/uhren/images_97/s6/12467697_xxl_v1569241825636.jpg";
+    default:
+      return DataStore.instance.kmarket[e];
   }
 //    return;
 }
