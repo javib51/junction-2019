@@ -1,4 +1,4 @@
-# BUDGE, 
+# Budge 
 Application produced during Junction 2019 for the Data Economics track
 
 Nowadays, society's awareness of the need for change in view of challenges like climate change, demographic change, and overconsumption increases. Yet, our behavior is still often not aligned with our values. We still buy things we do not need and we are not aware of the contribution of how our tiny daily decisions (i.e. taking the car instead of bike) impact the achievement of goals like "saving", "sustainability" or "health". 
