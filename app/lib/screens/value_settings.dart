@@ -415,7 +415,7 @@ class _ValueSettings extends State<ValueSettings> {
           width: getSizeWidth(context, 20),
           child: RaisedButton(
             child: Text(
-              "Next",
+              "NEXT",
               style: TextStyle(
                 fontSize: 18,
                 fontFamily: "Avenir",
