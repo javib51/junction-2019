@@ -41,7 +41,7 @@ class _AppState extends State<App> {
         backgroundColor: Colors.white,
       ),
       //home: new MyHomePage(key: new Key("aaaaa"),title: "My app -" + Config.helloMessage,),
-      home: new InventoryItemPage(),
+      home: new DashboardPage(),
       navigatorKey: Keys.navKey,
       routes: AppRoutes.getRoutes(),
     );

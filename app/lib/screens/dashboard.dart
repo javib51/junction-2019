@@ -17,7 +17,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   Widget _buildInventory(BuildContext context) {
     return GestureDetector(
-      onTap: (){Navigator.pushNamed(context, AppRoutes.saving_challenges);},
+      onTap: (){Navigator.pushNamed(context, AppRoutes.inventory);},
       child: Container(
 //      height: getSizeHeight(context, 16.9),
         width: getSizeWidth(context, 99.1),
