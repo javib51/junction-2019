@@ -1,3 +1,6 @@
+import 'dart:ffi';
+import 'dart:math';
+
 import 'package:budge/data.dart';
 import 'package:budge/utils.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
@@ -76,6 +79,24 @@ class _InventoryPageState extends State<InventoryPage> {
         ),
       ),
     );
+  }
+
+
+  double _getPercentage(String e) {
+    switch(e) {
+      case "eletronicos":
+        return 0.85;
+      case "utilidades_domesticas":
+        return 0.8;
+      case "brinquedos":
+        return 0.60;
+      case "consoles_games":
+        return 0.95;
+      case "relogios_presentes":
+        return 0.20;
+      default:
+        return 0.3;
+    }
   }
 
   String _getTitle(String e) {
@@ -222,7 +243,7 @@ class _InventoryPageState extends State<InventoryPage> {
                         animation: true,
                         lineHeight: 20.0,
                         animationDuration: 2200,
-                        percent: 0.8,
+                        percent: _getPercentage(title),
                         //                    linearStrokeCap: LinearStrokeCap.roundAll,
                         progressColor: Color(0xe82f3f9e),
                       ),

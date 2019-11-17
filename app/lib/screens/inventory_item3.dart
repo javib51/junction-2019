@@ -57,6 +57,23 @@ String _getCat2(String e) {
   }
 }
 
+double _getPercentage(String e) {
+  switch(e) {
+    case "eletronicos":
+      return 0.85;
+    case "utilidades_domesticas":
+      return 0.8;
+    case "brinquedos":
+      return 0.60;
+    case "consoles_games":
+      return 0.95;
+    case "relogios_presentes":
+      return 0.20;
+    default:
+      return 0.3;
+  }
+}
+
 String getImage(String e) {
   switch(e) {
     case "eletronicos":
@@ -204,7 +221,7 @@ class _InventoryItemPage3State extends State<InventoryItemPage3> {
               animation: true,
               lineHeight: getSizeHeight(context, 1.9),
               animationDuration: 1000,
-              percent: 0.8,
+              percent: _getPercentage(widget.title),
 //                    linearStrokeCap: LinearStrokeCap.roundAll,
               progressColor: Color(0xe82f3f9e),
             ),
