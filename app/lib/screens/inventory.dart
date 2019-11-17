@@ -88,6 +88,8 @@ class _InventoryPageState extends State<InventoryPage> {
         return "Battlefield V";
       case "relogios_presentes":
         return "Rolex Submariner";
+      default:
+        return e;
     }
   }
 
@@ -103,6 +105,8 @@ class _InventoryPageState extends State<InventoryPage> {
         return "Games";
       case "relogios_presentes":
         return "Watch";
+      default:
+        return "Food";
     }
   }
 
@@ -118,6 +122,8 @@ class _InventoryPageState extends State<InventoryPage> {
         return "Durable";
       case "relogios_presentes":
         return "Durable";
+      default:
+        return "No Durable";
     }
   }
 
@@ -133,6 +139,8 @@ class _InventoryPageState extends State<InventoryPage> {
         return "https://images-na.ssl-images-amazon.com/images/I/81GOvlbRtmL._SL1500_.jpg";
       case "relogios_presentes":
         return "https://cdn2.chrono24.com/images/uhren/images_97/s6/12467697_xxl_v1569241825636.jpg";
+      default:
+        return DataStore.instance.kmarket[e];
     }
 //    return;
   }
