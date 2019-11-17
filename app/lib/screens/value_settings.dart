@@ -2,6 +2,7 @@ import 'package:budge/utils.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:budge/data.dart';
 
 class ValueSettings extends StatefulWidget {
   @override
@@ -25,13 +26,13 @@ class _ValueSettings extends State<ValueSettings> {
 
       switch (_radioValue1) {
         case 0:
-          print(0);
+          DataStore.instance.sus_value = 1;
           break;
         case 1:
-          print(1);
+          DataStore.instance.sus_value = 2;
           break;
         case 2:
-          print(2);
+          DataStore.instance.sus_value = 3;
           break;
       }
     });
@@ -42,13 +43,13 @@ class _ValueSettings extends State<ValueSettings> {
 
       switch (_radioValue2) {
         case 0:
-          print(0);
+          DataStore.instance.he_value = 1;
           break;
         case 1:
-          print(1);
+          DataStore.instance.he_value = 2;
           break;
         case 2:
-          print(2);
+          DataStore.instance.he_value = 3;
           break;
       }
     });
@@ -59,13 +60,13 @@ class _ValueSettings extends State<ValueSettings> {
 
       switch (_radioValue3) {
         case 0:
-          print(0);
+          DataStore.instance.sav_value = 1;
           break;
         case 1:
-          print(1);
+          DataStore.instance.sav_value = 2;
           break;
         case 2:
-          print(2);
+          DataStore.instance.sav_value = 3;
           break;
       }
     });

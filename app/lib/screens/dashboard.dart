@@ -1,6 +1,8 @@
 import 'package:budge/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:budge/app_routes.dart';
+import 'package:budge/data.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -14,104 +16,107 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   Widget _buildInventory(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){Navigator.pushNamed(context, AppRoutes.saving_challenges);},
+      child: Container(
 //      height: getSizeHeight(context, 16.9),
-      width: getSizeWidth(context, 99.1),
-      child: new DecoratedBox(
-        decoration: new BoxDecoration(
-          color: Colors.white,
-          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
-          boxShadow: [
-            new BoxShadow(
-                color: Colors.black54,
+        width: getSizeWidth(context, 99.1),
+        child: new DecoratedBox(
+          decoration: new BoxDecoration(
+            color: Colors.white,
+            borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+            boxShadow: [
+              new BoxShadow(
+                  color: Colors.black54,
 //                  offset: new Offset(1.0, 2.0),
-                blurRadius: 1.0)
-          ],
-        ),
-        child: Container(
-          padding: EdgeInsets.only(
-            top: getSizeHeight(context, 2.2),
-            bottom: getSizeHeight(context, 2.2),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                "Your Inventory",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontFamily: "Avenir",
-                  fontWeight: FontWeight.w400,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(
-                height: getSizeHeight(context, 2),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  left: getSizeWidth(context, 4.2),
-                  right: getSizeWidth(context, 3.2),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Container(
-                      height: getSizeWidth(context, 17),
-                      width: getSizeWidth(context, 17),
-                      child: new DecoratedBox(
-                        decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              new BorderRadius.all(new Radius.circular(10.0)),
-                        ),
-                        child: Image.asset("./assets/images/bicycle.png",
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                    Container(
-                      height: getSizeWidth(context, 17),
-                      width: getSizeWidth(context, 17),
-                      child: new DecoratedBox(
-                        decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              new BorderRadius.all(new Radius.circular(10.0)),
-                        ),
-                        child: Image.asset("./assets/images/high-heels.png",
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                    Container(
-                      height: getSizeWidth(context, 17),
-                      width: getSizeWidth(context, 17),
-                      child: new DecoratedBox(
-                        decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              new BorderRadius.all(new Radius.circular(10.0)),
-                        ),
-                        child: Image.asset("./assets/images/photo-camera.png",
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                    Container(
-                      height: getSizeWidth(context, 17),
-                      width: getSizeWidth(context, 17),
-                      child: new DecoratedBox(
-                        decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              new BorderRadius.all(new Radius.circular(10.0)),
-                        ),
-                        child: Image.asset("./assets/images/surfboard.png",
-                            fit: BoxFit.contain),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                  blurRadius: 1.0)
             ],
+          ),
+          child: Container(
+            padding: EdgeInsets.only(
+              top: getSizeHeight(context, 2.2),
+              bottom: getSizeHeight(context, 2.2),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Your Inventory",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontFamily: "Avenir",
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: getSizeHeight(context, 2),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: getSizeWidth(context, 4.2),
+                    right: getSizeWidth(context, 3.2),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        height: getSizeWidth(context, 17),
+                        width: getSizeWidth(context, 17),
+                        child: new DecoratedBox(
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                new BorderRadius.all(new Radius.circular(10.0)),
+                          ),
+                          child: Image.asset("./assets/images/bicycle.png",
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                      Container(
+                        height: getSizeWidth(context, 17),
+                        width: getSizeWidth(context, 17),
+                        child: new DecoratedBox(
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                new BorderRadius.all(new Radius.circular(10.0)),
+                          ),
+                          child: Image.asset("./assets/images/high-heels.png",
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                      Container(
+                        height: getSizeWidth(context, 17),
+                        width: getSizeWidth(context, 17),
+                        child: new DecoratedBox(
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                new BorderRadius.all(new Radius.circular(10.0)),
+                          ),
+                          child: Image.asset("./assets/images/photo-camera.png",
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                      Container(
+                        height: getSizeWidth(context, 17),
+                        width: getSizeWidth(context, 17),
+                        child: new DecoratedBox(
+                          decoration: new BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                new BorderRadius.all(new Radius.circular(10.0)),
+                          ),
+                          child: Image.asset("./assets/images/surfboard.png",
+                              fit: BoxFit.contain),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -164,7 +169,8 @@ class _DashboardPageState extends State<DashboardPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Container(
+                        new Stack(children: <Widget>[
+                          Container(
                           height: getSizeWidth(context, 17),
                           width: getSizeWidth(context, 17),
                           child: new DecoratedBox(
@@ -178,6 +184,30 @@ class _DashboardPageState extends State<DashboardPage> {
                                 fit: BoxFit.contain),
                           ),
                         ),
+                          Container(
+                            alignment: Alignment(0, 0),
+                            height: 20,
+                            width: 20,
+                            margin: EdgeInsets.only(
+                                left: getSizeWidth(context, 12)),
+//              margin: EdgeInsets.only(
+//                  left: getSizeWidth(context, 5.3),
+//                  right: getSizeWidth(context, 5.3)),
+                            decoration: BoxDecoration(
+                              color: Color(0xff979797),
+                              borderRadius: BorderRadius.all(Radius.circular(15)),
+                            ),
+                            child:
+                            Text(
+                              DataStore.instance.sus_value == -1 ? "-" : DataStore.instance.sus_value.toString(),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "Avenir",
+                                fontWeight: FontWeight.w600,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),]),
                         SizedBox(
                           height: getSizeHeight(context, 2),
                         ),
@@ -198,19 +228,45 @@ class _DashboardPageState extends State<DashboardPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          height: getSizeWidth(context, 17),
-                          width: getSizeWidth(context, 17),
-                          child: new DecoratedBox(
-                            decoration: new BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(10.0)),
+                        new Stack(children: <Widget>[
+                          Container(
+                            height: getSizeWidth(context, 17),
+                            width: getSizeWidth(context, 17),
+                            child: new DecoratedBox(
+                              decoration: new BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: new BorderRadius.all(
+                                    new Radius.circular(10.0)),
+                              ),
+                              child: Image.asset(
+                                  "./assets/images/heart.png",
+                                  fit: BoxFit.contain),
                             ),
-                            child: Image.asset("./assets/images/heart.png",
-                                fit: BoxFit.contain),
                           ),
-                        ),
+                          Container(
+                            alignment: Alignment(0, 0),
+                            height: 20,
+                            width: 20,
+                            margin: EdgeInsets.only(
+                                left: getSizeWidth(context, 12)),
+//              margin: EdgeInsets.only(
+//                  left: getSizeWidth(context, 5.3),
+//                  right: getSizeWidth(context, 5.3)),
+                            decoration: BoxDecoration(
+                              color: Color(0xff979797),
+                              borderRadius: BorderRadius.all(Radius.circular(15)),
+                            ),
+                            child:
+                            Text(
+                              DataStore.instance.he_value == -1 ? "-" : DataStore.instance.he_value.toString(),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "Avenir",
+                                fontWeight: FontWeight.w600,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),]),
                         SizedBox(
                           height: getSizeHeight(context, 2),
                         ),
@@ -231,18 +287,45 @@ class _DashboardPageState extends State<DashboardPage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Container(
-                          height: getSizeWidth(context, 17),
-                          width: getSizeWidth(context, 17),
-                          child: new DecoratedBox(
-                            decoration: new BoxDecoration(
-                              borderRadius: new BorderRadius.all(
-                                  new Radius.circular(10.0)),
+                        new Stack(children: <Widget>[
+                          Container(
+                            height: getSizeWidth(context, 17),
+                            width: getSizeWidth(context, 17),
+                            child: new DecoratedBox(
+                              decoration: new BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: new BorderRadius.all(
+                                    new Radius.circular(10.0)),
+                              ),
+                              child: Image.asset(
+                                  "./assets/images/piggy-bank.png",
+                                  fit: BoxFit.contain),
                             ),
-                            child: Image.asset("./assets/images/piggy-bank.png",
-                                fit: BoxFit.contain),
                           ),
-                        ),
+                          Container(
+                            alignment: Alignment(0, 0),
+                            height: 20,
+                            width: 20,
+                            margin: EdgeInsets.only(
+                                left: getSizeWidth(context, 12)),
+//              margin: EdgeInsets.only(
+//                  left: getSizeWidth(context, 5.3),
+//                  right: getSizeWidth(context, 5.3)),
+                            decoration: BoxDecoration(
+                              color: Color(0xff979797),
+                              borderRadius: BorderRadius.all(Radius.circular(15)),
+                            ),
+                            child:
+                            Text(
+                                DataStore.instance.sav_value == -1 ? "-" : DataStore.instance.sav_value.toString(),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontFamily: "Avenir",
+                                fontWeight: FontWeight.w600,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),]),
                         SizedBox(
                           height: getSizeHeight(context, 2),
                         ),
@@ -300,7 +383,9 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: getSizeHeight(context, 2),),
+              SizedBox(
+                height: getSizeHeight(context, 2),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 15),
                 child: new LinearPercentIndicator(
@@ -364,9 +449,11 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    _buildSubChallenge(context, "Save on Starbucks purchases", 0.35),
+                    _buildSubChallenge(
+                        context, "Save on Starbucks purchases", 0.35),
 //                    SizedBox(width: getSizeWidth(context,2),),
-                    _buildSubChallenge(context, "Resell from your inventory", 0.2),
+                    _buildSubChallenge(
+                        context, "Resell from your inventory", 0.2),
                   ],
                 ),
               ),
@@ -513,7 +600,7 @@ class _DashboardPageState extends State<DashboardPage> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.settings),
-              onPressed: () {},
+              onPressed: () {Navigator.pushNamed(context, AppRoutes.value_settings);},
             ),
           ],
         ),
