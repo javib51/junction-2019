@@ -3,6 +3,7 @@ import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
+import '../app_routes.dart';
 import '../utils.dart';
 
 class InventoryItemPage extends StatefulWidget {
@@ -296,7 +297,8 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
                 height: getSizeHeight(context, 10),
                 width: getSizeHeight(context, 10),
                 child: new FloatingActionButton(
-                  onPressed: () {},
+                  heroTag: "btn1",
+                  onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item3);},
                   child: new Icon(
                     Icons.clear,
                     color: Colors.white,
@@ -337,7 +339,8 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
                 height: getSizeHeight(context, 10),
                 width: getSizeHeight(context, 10),
                 child: new FloatingActionButton(
-                  onPressed: () {},
+                  heroTag: "btn2",
+                  onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item2);},
                   child: new Icon(
                     Icons.cached,
                     color: Colors.white,
