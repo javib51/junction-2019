@@ -632,6 +632,7 @@ class _DashboardPageState extends State<DashboardPage> {
               fontWeight: FontWeight.w400,
             ),
           ),
+          leading: Container(),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.settings),

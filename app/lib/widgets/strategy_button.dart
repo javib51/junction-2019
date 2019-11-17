@@ -52,22 +52,24 @@ class _PaymentMethodButtonState extends State<PaymentMethodButton> {
 //    } else {
       setState(() {
         isChecked = value;
-        switch (widget.id) {
-          case 0:
-            DataStore.instance.swi_stra = value;
-            break;
-          case 1:
-            DataStore.instance.resell_stra = value;
-            break;
-          case 2:
-            DataStore.instance.invest_stra = value;
-            break;
-          case 3:
-            DataStore.instance.auto_stra = value;
-            break;
-          case 4:
-            DataStore.instance.cut_stra = value;
-            break;
+        if(isChecked) {
+          switch (widget.id) {
+            case 0:
+              DataStore.instance.swi_stra = value;
+              break;
+            case 1:
+              DataStore.instance.resell_stra = value;
+              break;
+            case 2:
+              DataStore.instance.invest_stra = value;
+              break;
+            case 3:
+              DataStore.instance.auto_stra = value;
+              break;
+            case 4:
+              DataStore.instance.cut_stra = value;
+              break;
+          }
         }
       });//}
   }

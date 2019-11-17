@@ -1,3 +1,4 @@
+import 'package:budge/data.dart';
 import 'package:budge/utils.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,17 @@ class InventoryPage extends StatefulWidget {
 }
 
 class _InventoryPageState extends State<InventoryPage> {
+  var something = "";
+
   @override
   void initState() {
     super.initState();
     print("Inventory Page");
+    DataStore.instance.getInventory().then((t) {
+      setState(() {
+        something += ".";
+      });
+    });
   }
 
   Widget _buildSearchBar(BuildContext context) {
@@ -65,6 +73,51 @@ class _InventoryPageState extends State<InventoryPage> {
     );
   }
 
+  String _getTitle(String e) {
+    switch(e) {
+      case "eletronicos":
+        return "Canon 80d";
+      case "utilidades_domesticas":
+        return "Roomba 605";
+      case "brinquedos":
+        return "Catan";
+      case "consoles_games":
+        return "Battlefield V";
+      case "relogios_presentes":
+        return "Rolex Submariner";
+    }
+  }
+
+  String _getCat1(String e) {
+    switch(e) {
+      case "eletronicos":
+        return "Electronics";
+      case "utilidades_domesticas":
+        return "Domestic";
+      case "brinquedos":
+        return "Games";
+      case "consoles_games":
+        return "Games";
+      case "relogios_presentes":
+        return "Watch";
+    }
+  }
+
+  String _getCat2(String e) {
+    switch(e) {
+      case "eletronicos":
+        return "Durable";
+      case "utilidades_domesticas":
+        return "Durable";
+      case "brinquedos":
+        return "Durable";
+      case "consoles_games":
+        return "Durable";
+      case "relogios_presentes":
+        return "Durable";
+    }
+  }
+
   Widget _buildItem(BuildContext context, String title) {
     return GestureDetector(
       // WE NEED TO SEND ARGUMENTS TO THE NEXT SCREEN (NAME OF ITEM)
@@ -76,16 +129,18 @@ class _InventoryPageState extends State<InventoryPage> {
 //          ),
 //        );
 //      },
-      onTap: (){Navigator.pushNamed(context, AppRoutes.inventory_item);},
+      onTap: () {
+        Navigator.pushNamed(context, AppRoutes.inventory_item);
+      },
       child: Container(
-  //      height: getSizeHeight(context, 11.9),
+        //      height: getSizeHeight(context, 11.9),
         child: new DecoratedBox(
           decoration: new BoxDecoration(color: Color(0xffe8e8e8),
-  //          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+              //          borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
               boxShadow: [
                 new BoxShadow(
                     color: Colors.black54,
-  //                  offset: new Offset(1.0, 2.0),
+                    //                  offset: new Offset(1.0, 2.0),
                     blurRadius: 2.0)
               ]),
           child: Container(
@@ -120,7 +175,7 @@ class _InventoryPageState extends State<InventoryPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Text(
-                      "Winter Coat",
+                      _getTitle(title),
                       style: TextStyle(
                         fontSize: 16,
                         fontFamily: "Avenir",
@@ -138,7 +193,7 @@ class _InventoryPageState extends State<InventoryPage> {
                         lineHeight: 20.0,
                         animationDuration: 2200,
                         percent: 0.8,
-  //                    linearStrokeCap: LinearStrokeCap.roundAll,
+                        //                    linearStrokeCap: LinearStrokeCap.roundAll,
                         progressColor: Color(0xe82f3f9e),
                       ),
                     ),
@@ -153,7 +208,11 @@ class _InventoryPageState extends State<InventoryPage> {
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
                             heroTag: "btn1",
-                            onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item3);}, // todo: Send same arguments as above to next screen
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.inventory_item3);
+                            },
+                            // todo: Send same arguments as above to next screen
                             child: new Icon(
                               Icons.clear,
                               color: Colors.white,
@@ -162,7 +221,7 @@ class _InventoryPageState extends State<InventoryPage> {
                             shape: new CircleBorder(),
                             elevation: 2.0,
                             backgroundColor: Color(0xff676971),
-  //                      padding: const EdgeInsets.all(15.0),
+                            //                      padding: const EdgeInsets.all(15.0),
                           ),
                         ),
                         SizedBox(
@@ -173,7 +232,11 @@ class _InventoryPageState extends State<InventoryPage> {
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
                             heroTag: "btn2",
-                            onPressed: () {Navigator.pushNamed(context, AppRoutes.inventory_item2);},  // todo: Send same arguments as above to next screen
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, AppRoutes.inventory_item2);
+                            },
+                            // todo: Send same arguments as above to next screen
                             child: new Icon(
                               Icons.cached,
                               color: Colors.white,
@@ -182,7 +245,7 @@ class _InventoryPageState extends State<InventoryPage> {
                             shape: new CircleBorder(),
                             elevation: 2.0,
                             backgroundColor: Color(0xff676971),
-  //                      padding: const EdgeInsets.all(15.0),
+                            //                      padding: const EdgeInsets.all(15.0),
                           ),
                         ),
                         SizedBox(
@@ -192,7 +255,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           color: Color(0xfff2e5a1),
                           padding: EdgeInsets.all(5),
                           child: Text(
-                            "Durable",
+                            _getCat2(title),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 12,
@@ -208,7 +271,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           color: Color(0xfff2bfa1),
                           padding: EdgeInsets.all(5),
                           child: Text(
-                            "Clothes",
+                            _getCat1(title),
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 12,
@@ -230,9 +293,11 @@ class _InventoryPageState extends State<InventoryPage> {
   }
 
   List<Widget> _buildItems(BuildContext context) {
-    return [
-      _buildItem(context, "Winter Coat"),
-    ];
+    return DataStore.instance.inventory.isEmpty
+        ? []
+        : DataStore.instance.inventory
+            .map((e) => _buildItem(context, e))
+            .toList();
   }
 
   Widget _buildBody(BuildContext context) {

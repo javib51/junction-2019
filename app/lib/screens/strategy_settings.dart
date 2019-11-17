@@ -19,11 +19,11 @@ class _StrategySettings extends State<StrategySettings> {
 //    DataStore.instance.he_value = -1;
 //    DataStore.instance.sav_value = -1;
 //    DataStore.instance.sus_value = -1;
-//    DataStore.instance.swi_stra = false;
-//    DataStore.instance.resell_stra = false;
-//    DataStore.instance.invest_stra = false;
-//    DataStore.instance.auto_stra = false;
-//    DataStore.instance.cut_stra = false;
+    DataStore.instance.swi_stra = false;
+    DataStore.instance.resell_stra = false;
+    DataStore.instance.invest_stra = false;
+    DataStore.instance.auto_stra = false;
+    DataStore.instance.cut_stra = false;
   }
 
 
