@@ -14,7 +14,7 @@ def get_config(profile):
 
     config = configparser.ConfigParser()
     config.read('config/' + config_file)
-    os.environ.setdefault('GOOGLE_APPLICATION_CREDENTIALS', config['credentials']['firebase'])
+    print(dict(config.items('mysql')))
     return config
 
 
