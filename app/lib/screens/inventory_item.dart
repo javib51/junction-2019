@@ -26,7 +26,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              border: Border.all(color: Color(0xfff2e5a1)),
               color: Color(0xfff2e5a1),
             ),
             width: getSizeWidth(context, 22),
@@ -43,7 +43,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              border: Border.all(color: Color(0xfff2e5a1)),
               color: Color(0xfff2e5a1),
             ),
             width: getSizeWidth(context, 22),
@@ -60,7 +60,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
           ),
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              border: Border.all(color: Color(0xfff2e5a1)),
               color: Color(0xfff2e5a1),
             ),
             width: getSizeWidth(context, 22),
@@ -130,7 +130,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
               linearStrokeCap: LinearStrokeCap.butt,
               animation: true,
               lineHeight: getSizeHeight(context, 1.9),
-              animationDuration: 2200,
+              animationDuration: 1000,
               percent: 0.8,
 //                    linearStrokeCap: LinearStrokeCap.roundAll,
               progressColor: Color(0xe82f3f9e),

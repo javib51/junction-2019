@@ -3,7 +3,7 @@ import 'package:budge/keys.dart';
 import 'package:budge/screens/inventory.dart';
 import 'package:budge/screens/saving_challenges.dart';
 import 'package:budge/screens/start_challenge.dart';
-import 'package:budge/screens/wishlist.dart';
+import 'package:budge/screens/inventory_item.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -39,7 +39,7 @@ class _AppState extends State<App> {
         backgroundColor: Colors.white,
       ),
       //home: new MyHomePage(key: new Key("aaaaa"),title: "My app -" + Config.helloMessage,),
-      home: new WishListPage(),
+      home: new InventoryItemPage(),
       navigatorKey: Keys.navKey,
       routes: AppRoutes.getRoutes(),
     );

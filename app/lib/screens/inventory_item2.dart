@@ -16,71 +16,6 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
     super.initState();
   }
 
-  Widget _buildTags(BuildContext context) {
-    return Container(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-          SizedBox(
-            width: getSizeWidth(context, 4.1),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "Durable",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "ItemCategory",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "Old",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: getSizeWidth(context, 4.1),
-          ),
-        ]));
-  }
-
   Widget _buildItem(BuildContext context) {
     return Container(
         child: Column(
@@ -130,7 +65,7 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
               linearStrokeCap: LinearStrokeCap.butt,
               animation: true,
               lineHeight: getSizeHeight(context, 1.9),
-              animationDuration: 2200,
+              animationDuration: 1000,
               percent: 0.8,
 //                    linearStrokeCap: LinearStrokeCap.roundAll,
               progressColor: Color(0xe82f3f9e),
@@ -439,4 +374,69 @@ class _InventoryItemPage2State extends State<InventoryItemPage2> {
       ),
     );
   }
+
+}
+Widget _buildTags(BuildContext context) {
+  return Container(
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            SizedBox(
+              width: getSizeWidth(context, 4.1),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "Durable",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "ItemCategory",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "Old",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: getSizeWidth(context, 4.1),
+            ),
+          ]));
 }
