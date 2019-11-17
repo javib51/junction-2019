@@ -5,80 +5,15 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../utils.dart';
 
-class InventoryItemPage extends StatefulWidget {
+class InventoryItemPage2 extends StatefulWidget {
   @override
-  State<InventoryItemPage> createState() => _InventoryItemPageState();
+  State<InventoryItemPage2> createState() => _InventoryItemPage2State();
 }
 
-class _InventoryItemPageState extends State<InventoryItemPage> {
+class _InventoryItemPage2State extends State<InventoryItemPage2> {
   @override
   void initState() {
     super.initState();
-  }
-
-  Widget _buildTags(BuildContext context) {
-    return Container(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-          SizedBox(
-            width: getSizeWidth(context, 4.1),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Color(0xfff2e5a1)),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "Durable",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Color(0xfff2e5a1)),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "ItemCategory",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Color(0xfff2e5a1)),
-              color: Color(0xfff2e5a1),
-            ),
-            width: getSizeWidth(context, 22),
-            padding: EdgeInsets.all(5),
-            child: Text(
-              "Old",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 12,
-                fontFamily: "Avenir",
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-          SizedBox(
-            width: getSizeWidth(context, 4.1),
-          ),
-        ]));
   }
 
   Widget _buildItem(BuildContext context) {
@@ -287,91 +222,120 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
 
   Widget _buildButtoms(BuildContext context) {
     return Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                height: getSizeHeight(context, 10),
-                width: getSizeHeight(context, 10),
-                child: new FloatingActionButton(
-                  onPressed: () {},
-                  child: new Icon(
-                    Icons.clear,
-                    color: Colors.white,
-                    size: 80.0,
-                  ),
-                  shape: new CircleBorder(),
-                  elevation: 2.0,
-                  backgroundColor: Color(0xff676971),
-//                      padding: const EdgeInsets.all(15.0),
+        child: Column(children: <Widget>[
+      Container(
+          alignment: Alignment(0, 0),
+          padding: EdgeInsets.only(
+              left: getSizeWidth(context, 10),
+              right: getSizeWidth(context, 10)),
+          child: new Container(
+            width: getSizeWidth(context, 70),
+            height: getSizeHeight(context, 32),
+            decoration: new BoxDecoration(
+              border: new Border.all(
+                  color: Color(0xff979797),
+                  width: 1.0,
+                  style: BorderStyle.solid),
+              borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+            ),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: getSizeHeight(context, 3),
                 ),
-              ),
-              SizedBox(
-                height: getSizeHeight(context, 1.2),
-              ),
-              Container(
-                child: RichText(
+                RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(children: [
                       TextSpan(
                           style: TextStyle(
                             color: Color(0xde000000),
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             fontFamily: "Avenir",
                             fontStyle: FontStyle.italic,
-                            fontSize: 12,
+                            fontSize: 13,
                           ),
-                          text: "Item has been \n removed from \n inventory"),
+                          text: "Resell or send item to \n second-hand market"),
                     ])),
-              )
-            ],
-          ),
-          SizedBox(
-            width: getSizeWidth(context, 10),
-          ),
-          Column(
-            children: <Widget>[
-              Container(
-                height: getSizeHeight(context, 10),
-                width: getSizeHeight(context, 10),
-                child: new FloatingActionButton(
-                  onPressed: () {},
-                  child: new Icon(
-                    Icons.cached,
-                    color: Colors.white,
-                    size: 80.0,
-                  ),
-                  shape: new CircleBorder(),
-                  elevation: 2.0,
-                  backgroundColor: Color(0xff2f3f9e),
-//                      padding: const EdgeInsets.all(15.0),
+                SizedBox(
+                  height: getSizeHeight(context, 1),
                 ),
-              ),
-              SizedBox(
-                height: getSizeHeight(context, 1.2),
-              ),
-              Container(
-                child: RichText(
+                RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(children: [
                       TextSpan(
                           style: TextStyle(
                             color: Color(0xde000000),
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w500,
                             fontFamily: "Avenir",
-                            fontStyle: FontStyle.italic,
-                            fontSize: 12,
+                            fontStyle: FontStyle.normal,
+                            fontSize: 15,
                           ),
-                          text: "Resell or send item \n to second-hand \n market"),
+                          text: "Current Estimated Value:"),
                     ])),
-              )
-            ],
-          ),
-        ],
-      ),
-    );
+                SizedBox(
+                  height: getSizeHeight(context, 1),
+                ),
+                RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(children: [
+                      TextSpan(
+                          style: TextStyle(
+                            color: Color(0xff2f3f9e),
+                            fontWeight: FontWeight.w800,
+                            fontFamily: "Avenir",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 22,
+                          ),
+                          text: "€20.00"),
+                    ])),
+                SizedBox(
+                  height: getSizeHeight(context, 3),
+                ),
+                Container(
+                  height: getSizeHeight(context, 5.6),
+                  width: getSizeWidth(context, 25),
+                  child: RaisedButton(
+                    child: Text(
+                      "SELL IT",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Avenir",
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                    color: Color(0xff2f3f9e),
+                    onPressed: () {},
+                  ),
+                ),
+                SizedBox(
+                  height: getSizeHeight(context, 1),
+                ),
+                Container(
+                  height: getSizeHeight(context, 5.6),
+                  width: getSizeWidth(context, 35),
+                  child: RaisedButton(
+                    child: Text(
+                      "GIVE AWAY",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: "Avenir",
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                      ),
+                    ),
+                    color: Color(0xff2f3f9e),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+          )
+      )
+    ]));
+//    child: new Column(
+//    mainAxisAlignment: MainAxisAlignment.center,
+//    children: <Widget>[])
   }
 
   Widget _buildBody(BuildContext context) {
@@ -390,7 +354,7 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
         ),
         _buildLifeSpan(context),
         SizedBox(
-          height: getSizeHeight(context, 8.8),
+          height: getSizeHeight(context, 5),
         ),
         _buildButtoms(context)
       ],
@@ -410,4 +374,69 @@ class _InventoryItemPageState extends State<InventoryItemPage> {
       ),
     );
   }
+
+}
+Widget _buildTags(BuildContext context) {
+  return Container(
+      child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            SizedBox(
+              width: getSizeWidth(context, 4.1),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "Durable",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "ItemCategory",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xfff2e5a1)),
+                color: Color(0xfff2e5a1),
+              ),
+              width: getSizeWidth(context, 22),
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "Old",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontFamily: "Avenir",
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+            SizedBox(
+              width: getSizeWidth(context, 4.1),
+            ),
+          ]));
 }

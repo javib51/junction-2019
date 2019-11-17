@@ -6,10 +6,15 @@ import 'package:budge/screens/strategy_settings.dart';
 import 'package:budge/screens/value_settings.dart';
 import 'package:budge/screens/wishlist.dart';
 import 'package:flutter/material.dart';
+import 'package:budge/screens/inventory_item.dart';
+import 'package:budge/screens/inventory_item2.dart';
+import 'package:budge/screens/inventory_item3.dart';
 
 class AppRoutes {
   static const inventory = '/inventory';
   static const inventory_item = '/inventory/item';
+  static const inventory_item2 = '/inventory/item2';
+  static const inventory_item3 = '/inventory/item3';
   static const saving_challenges = '/challenges';
   static const start_challenge = '/challenge/start';
   static const value_settings = '/values';
@@ -26,6 +31,9 @@ class AppRoutes {
       AppRoutes.strategy_settings: (context) => StrategySettings(),
       AppRoutes.wish_list: (context) => WishListPage(),
       AppRoutes.dashboard: (context) => DashboardPage(),
+      AppRoutes.inventory_item: (context) => InventoryItemPage(),
+      AppRoutes.inventory_item2: (context) => InventoryItemPage2(),
+      AppRoutes.inventory_item3: (context) => InventoryItemPage3(),
     };
   }
 }

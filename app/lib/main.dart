@@ -4,7 +4,7 @@ import 'package:budge/screens/dashboard.dart';
 import 'package:budge/screens/inventory.dart';
 import 'package:budge/screens/saving_challenges.dart';
 import 'package:budge/screens/start_challenge.dart';
-import 'package:budge/screens/wishlist.dart';
+import 'package:budge/screens/inventory_item.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
