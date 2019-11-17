@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../app_routes.dart';
+import 'package:random_string/random_string.dart';
 
 class InventoryPage extends StatefulWidget {
   @override
@@ -118,6 +119,22 @@ class _InventoryPageState extends State<InventoryPage> {
     }
   }
 
+  String getImage(String e) {
+    switch(e) {
+      case "eletronicos":
+        return "https://static.bhphoto.com/images/images2500x2500/1455749513_1225875.jpg";
+      case "utilidades_domesticas":
+        return "https://images-na.ssl-images-amazon.com/images/I/61K7QbCPtyL._SX355_.jpg";
+      case "brinquedos":
+        return "https://images-na.ssl-images-amazon.com/images/I/81G3u55HEHL._SX466_.jpg";
+      case "consoles_games":
+        return "https://images-na.ssl-images-amazon.com/images/I/81GOvlbRtmL._SL1500_.jpg";
+      case "relogios_presentes":
+        return "https://cdn2.chrono24.com/images/uhren/images_97/s6/12467697_xxl_v1569241825636.jpg";
+    }
+//    return;
+  }
+
   Widget _buildItem(BuildContext context, String title) {
     return GestureDetector(
       // WE NEED TO SEND ARGUMENTS TO THE NEXT SCREEN (NAME OF ITEM)
@@ -151,7 +168,8 @@ class _InventoryPageState extends State<InventoryPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 CircularProfileAvatar(
-                  'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
+                  getImage(title),
+//                  'https://firebasestorage.googleapis.com/v0/b/trukatu-dev-1.appspot.com/o/blank-profile-picture-973460_640.png?alt=media&token=026ca169-fa4f-4871-9a30-954f9b4222a8',
                   radius: 34,
                   backgroundColor: Colors.transparent,
                   borderWidth: 1,
@@ -207,7 +225,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           height: getSizeHeight(context, 4.5),
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
-                            heroTag: "btn1",
+                            heroTag: randomString(10),
                             onPressed: () {
                               Navigator.pushNamed(
                                   context, AppRoutes.inventory_item3);
@@ -231,7 +249,7 @@ class _InventoryPageState extends State<InventoryPage> {
                           height: getSizeHeight(context, 4.5),
                           width: getSizeHeight(context, 4.5),
                           child: new FloatingActionButton(
-                            heroTag: "btn2",
+                            heroTag: randomString(10),
                             onPressed: () {
                               Navigator.pushNamed(
                                   context, AppRoutes.inventory_item2);

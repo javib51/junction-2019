@@ -390,7 +390,7 @@ class _WishListPageState extends State<WishListPage> {
               color: Colors.white,
               fontSize: 20,
               fontFamily: "Avenir",
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w400,
             ),
           ),
           leading: IconButton(
